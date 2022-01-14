@@ -18,6 +18,10 @@ export const homeStyles = makeStyles((theme) => ({
   },
   sideMenuList: {
     listStyle: 'none',
+    width: '100%',
+    padding: 0,
+    margin: 0,
+    maxWidth: 230,
   },
   sideMenuListItem: {
     cursor: 'pointer',
@@ -87,6 +91,10 @@ export const homeStyles = makeStyles((theme) => ({
   tweetAvatar: {
     width: theme.spacing(5),
     height: theme.spacing(5)
+  },
+  sideMenuTweetButton: {
+    padding: theme.spacing(3.2),
+    marginTop: theme.spacing(3),
   }
 }))
 

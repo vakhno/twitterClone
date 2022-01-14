@@ -1,4 +1,4 @@
-import { IconButton, Typography } from '@material-ui/core'
+import { IconButton, Typography, Button } from '@material-ui/core'
 import React, { ReactElement } from 'react'
 import {homeStyles} from '../../pages/Home'
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -63,6 +63,9 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): Rea
           <MoreIcon className={classes.sideMenuListItemIcon}/>
           <Typography variant='h6' className={classes.sideMenuListItemLabel}>Еще</Typography>
         </div>
+      </li>
+      <li className={classes.sideMenuListItem}>
+        <Button className={classes.sideMenuTweetButton} variant="contained" color="primary" fullWidth>Твитнуть</Button>
       </li>
     </ul>
   )
