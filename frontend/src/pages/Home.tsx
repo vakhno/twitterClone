@@ -20,8 +20,28 @@ export const homeStyles = makeStyles((theme) => ({
     listStyle: 'none',
   },
   sideMenuListItem: {
-    display: 'flex',
-    alignItems: 'center',
+    cursor: 'pointer',
+    '&:hover': {
+      '& div': {
+        backgroundColor: 'rgba(29, 161, 242, 0.1)',
+        '& h6': {
+          color: theme.palette.primary.main,
+        },
+        '& svg': {
+          fill: theme.palette.primary.main,
+        },
+      }
+    },
+    '& div': {
+      posiiton: 'relative',
+      height: 50,
+      display: 'inline-flex',
+      alignItems: 'center',
+      padding: '0 25px 0 20px',
+      borderRadius: 30,
+      marginBottom: 10,
+      transition: 'background-color 0.15s ease-in-out'
+    },
   },
   sideMenuListItemLabel: {
     fontWeight: 700,
@@ -29,7 +49,7 @@ export const homeStyles = makeStyles((theme) => ({
     marginLeft: 14,
   },
   sideMenuListItemIcon: {
-    fontSize: 25,
+    fontSize: 28,
   },
   tweetsWrapper: {
     borderRadius: 0,
