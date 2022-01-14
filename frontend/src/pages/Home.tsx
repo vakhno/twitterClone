@@ -8,17 +8,14 @@ import MarkIcon from '@material-ui/icons/BookmarkBorderOutlined';
 import ListIcon from '@material-ui/icons/ListAltOutlined';
 import UserIcon from '@material-ui/icons/PermIdentityOutlined';
 import MoreIcon from '@material-ui/icons/MoreOutlined';
-import CommentIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
-import RepeatIcon from '@material-ui/icons/RepeatOutlined';
-import LikeIcon from '@material-ui/icons/FavoriteBorderOutlined';
-import ShareIcon from '@material-ui/icons/ReplyOutlined';
-
-import classNames from 'classnames';
 
 import { createStyles, withStyles } from '@material-ui/styles';
 import { grey } from '@material-ui/core/colors';
+import { Tweet } from '../components/Tweet/Tweet'
+import { relative } from 'path/posix';
 
-const homeStyles = makeStyles((theme) => ({
+
+export const homeStyles = makeStyles((theme) => ({
   wrapper: {
     height: '100vh'
   },
@@ -65,12 +62,20 @@ const homeStyles = makeStyles((theme) => ({
   tweetFooterIcons: {
     display: 'flex',
     justifyContent: 'space-between',
+    position: 'relative',
+    left: -13,
   },
   tweet:{
+    paddintTop: 15,
+    paddintLeft: 20,
    '&:hover': {
      cursor: 'pointer',
      backgroundColor: 'rgb(245, 248, 250)'
    } 
+  },
+  tweetAvatar: {
+    width: theme.spacing(5),
+    height: theme.spacing(5)
   }
 }))
 
@@ -147,43 +152,16 @@ export const Home: React.FC = (): React.ReactElement => {
               <Paper className={classes.tweetsWrapperHeader} variant='outlined'>
                 <Typography variant='h6'>Главная</Typography>
               </Paper>
-              <Paper className={classNames(classes.tweetsWrapperHeader, classes.tweet)} variant='outlined'>
-              <Grid container spacing={3}>
-                <Grid item xs={1}>
-                  <Avatar alt='User Avatar' src='https://images.unsplash.com/photo-1562124638-724e13052daf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80'/>
-                </Grid>
-                <Grid item xs={11}>
-                  <Typography><b>mxfLord</b> <span className={classes.twetsUserName}>@mxfLord</span></Typography>
-                  <Typography>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet architecto illo eos exercitationem labore delectus nostrum sed hic, sapiente nulla dignissimos quibusdam quis, fugit rem temporibus saepe ipsam, nobis blanditiis!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam facilis nemo corporis ducimus cupiditate iste libero maiores sapiente corrupti soluta, possimus autem quibusdam quae temporibus nihil quasi dolores non voluptatem.
-                  </Typography>
-                  <div className={classes.tweetFooterIcons}>
-                    <div>
-                      <IconButton>
-                        <CommentIcon style={{fontSize: 20}}/>
-                      </IconButton>
-                      <span>1</span>
-                    </div>
-                    <div>
-                    <IconButton>
-                      <RepeatIcon style={{fontSize: 20}}/>
-                    </IconButton>
-                  </div>
-                  <div>
-                    <IconButton>
-                      <LikeIcon style={{fontSize: 20}}/>
-                    </IconButton>
-                  </div>
-                  <div>
-                    <IconButton>
-                      <ShareIcon style={{fontSize: 20}}/>
-                    </IconButton>
-                  </div>
-                  </div>
-                </Grid>
-              </Grid>
-              </Paper>
+              <Tweet
+                text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus totam culpa, error vero quas unde nobis vel nemo consequuntur delectus, tempora dolorem dignissimos soluta illo ad esse in alias saepe.'
+                classes={classes}
+                user={{
+                  fullName: 'Glafira Shur',
+                  userName: 'GlafiraShur',
+                  tweetTime: '1 ч.',
+                  avatarUrl: 'https://media.istockphoto.com/photos/excited-woman-wearing-rainbow-cardigan-picture-id1327495437?k=20&m=1327495437&s=612x612&w=0&h=uYgb28tIs15a-rrnli1gqAiG9mBhazPrui9FRpqu9UM='
+                }}
+              />
             </Paper>
           </Grid>
           <Grid item xs={3}>
