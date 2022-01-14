@@ -22,47 +22,47 @@ export const SideMenu: React.FC<SideMenuProps> = ({classes}: SideMenuProps): Rea
           <TwitterIcon className={classes.logoIcon}/>
         </IconButton>
       </li>
-      <li className={classes.sideMenuListItem}>
-        <IconButton aria-label="search-icon">
+      <li className={classes.sideMenuListItem}>  
+        <div>
           <SearchIcon className={classes.sideMenuListItemIcon}/>
-        </IconButton>
-        <Typography variant='h6' className={classes.sideMenuListItemLabel}>Поиск</Typography>
+          <Typography variant='h6' className={classes.sideMenuListItemLabel}>Поиск</Typography>
+        </div>
       </li>
       <li className={classes.sideMenuListItem}>
-        <IconButton aria-label="notification-icon">
+        <div>
           <NotificationIcon className={classes.sideMenuListItemIcon}/>
-        </IconButton>
-        <Typography variant='h6' className={classes.sideMenuListItemLabel}>Уведомления</Typography>
+          <Typography variant='h6' className={classes.sideMenuListItemLabel}>Уведомления</Typography>
+        </div>
       </li>
       <li className={classes.sideMenuListItem}>
-        <IconButton aria-label="message-icon">
+        <div>
           <MessageIcon className={classes.sideMenuListItemIcon}/>
-        </IconButton>
-        <Typography variant='h6' className={classes.sideMenuListItemLabel}>Сообщения</Typography>
+          <Typography variant='h6' className={classes.sideMenuListItemLabel}>Сообщения</Typography>
+        </div>
       </li>
       <li className={classes.sideMenuListItem}>
-        <IconButton aria-label="mark-icon">
+        <div>
           <MarkIcon className={classes.sideMenuListItemIcon}/>
-        </IconButton>
-        <Typography variant='h6' className={classes.sideMenuListItemLabel}>Закладки</Typography>
+          <Typography variant='h6' className={classes.sideMenuListItemLabel}>Закладки</Typography>
+        </div>
       </li>
       <li className={classes.sideMenuListItem}>
-        <IconButton aria-label="list-icon">
+        <div>
           <ListIcon className={classes.sideMenuListItemIcon}/>
-        </IconButton>
-        <Typography variant='h6' className={classes.sideMenuListItemLabel}>Список</Typography>
+          <Typography variant='h6' className={classes.sideMenuListItemLabel}>Список</Typography>
+        </div>
       </li>
       <li className={classes.sideMenuListItem}>
-        <IconButton aria-label="user-icon">
+        <div>
           <UserIcon className={classes.sideMenuListItemIcon}/>
-        </IconButton>
-        <Typography variant='h6' className={classes.sideMenuListItemLabel}>Профиль</Typography>
+          <Typography variant='h6' className={classes.sideMenuListItemLabel}>Профиль</Typography>
+        </div>
       </li>
       <li className={classes.sideMenuListItem}>
-        <IconButton aria-label="more-icon">
+        <div>
           <MoreIcon className={classes.sideMenuListItemIcon}/>
-        </IconButton>
-        <Typography variant='h6' className={classes.sideMenuListItemLabel}>Еще</Typography>
+          <Typography variant='h6' className={classes.sideMenuListItemLabel}>Еще</Typography>
+        </div>
       </li>
     </ul>
   )
