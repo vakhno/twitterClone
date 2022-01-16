@@ -17,10 +17,12 @@ export const homeStyles = makeStyles((theme) => ({
     fontSize: 36,
   },
   sideMenuList: {
+    position: 'sticky',
+    top: 0,
     listStyle: 'none',
-    width: '100%',
     padding: 0,
     margin: 0,
+    width: '100%',
     maxWidth: 230,
   },
   sideMenuListItem: {
@@ -95,6 +97,11 @@ export const homeStyles = makeStyles((theme) => ({
   sideMenuTweetButton: {
     padding: theme.spacing(3.2),
     marginTop: theme.spacing(3),
+  },
+  rightSide: {
+    paddingTop: 20,
+    position: 'sticky',
+    top: 0,
   }
 }))
 
@@ -114,11 +121,11 @@ export const Home: React.FC = (): React.ReactElement => {
 
   return (
       <Container maxWidth='lg' className={classes.wrapper}>
-        <Grid container spacing={3}>
-          <Grid item xs={3}>
+        <Grid container spacing={3} style={{justifyContent:'center'}}>
+          <Grid item sm={1} md={3}>
             <SideMenu classes={classes}/>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item sm={8} md={6}>
             <Paper className={classes.tweetsWrapper} variant='outlined'>
               <Paper className={classes.tweetsWrapperHeader} variant='outlined'>
                 <Typography variant='h6'>Главная</Typography>
@@ -140,10 +147,12 @@ export const Home: React.FC = (): React.ReactElement => {
               }
             </Paper>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item sm={3} md={3}>
+            <div className={classes.rightSide}>
               <SearchTextField
               placeholder='Поиск по Твиттеру'
               fullWidth/>
+            </div>
           </Grid>
         </Grid>
       </Container>
