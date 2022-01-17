@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, IconButton, Typography, Paper, Avatar } from '@material-ui/core'
+import { IconButton, Typography, Paper, Avatar } from '@material-ui/core'
 
 import { homeStyles } from '../../pages/Home'
 
@@ -24,11 +24,8 @@ interface TweetProps {
 export const Tweet: React.FC<TweetProps> = ({classes, text, user}: TweetProps): React.ReactElement => {
   return (
     <Paper className={classNames(classes.tweetsWrapperHeader, classes.tweet)} variant='outlined'>
-    <Grid container spacing={3}>
-      <Grid item xs={1}>
-        <Avatar alt='User Avatar' src={user.avatarUrl} className={classes.tweetAvatar}/>
-      </Grid>
-      <Grid item xs={11}>
+      <Avatar alt='User Avatar' src={user.avatarUrl} className={classes.tweetAvatar}/>
+      <div>
         <Typography>
           <b>{user.fullName}</b>&nbsp;
           <span className={classes.twetsUserName}>@{user.userName}</span>&nbsp;
@@ -61,8 +58,7 @@ export const Tweet: React.FC<TweetProps> = ({classes, text, user}: TweetProps): 
           </IconButton>
         </div>
         </div>
-      </Grid>
-    </Grid>
+      </div>
     </Paper>
   )
 }

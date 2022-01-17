@@ -64,11 +64,17 @@ export const homeStyles = makeStyles((theme) => ({
     borderTop: 0,
   },
   tweetsWrapperHeader: {
-    borderLeft: 0,
-    borderRight: 0,
-    borderTop: 0,
+    display: 'flex',
+    alignItems: 'center',
+    flex: 1,
+    borderTop: '0',
+    borderLeft: '0',
+    borderRight: '0',
     borderRadius: 0,
     padding: '10px 15px',
+    '& h6': {
+      fontWeight: 800,
+    },
   },
   '& h6': {
     fontWeight: 800,
@@ -81,18 +87,22 @@ export const homeStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     position: 'relative',
     left: -13,
+    maxWidth: 450,
   },
   tweet:{
+    display: 'flex',
+    cursor: 'pointer',
+    alignItems: 'flex-start',
     paddintTop: 15,
     paddintLeft: 20,
    '&:hover': {
-     cursor: 'pointer',
      backgroundColor: 'rgb(245, 248, 250)'
    } 
   },
   tweetAvatar: {
-    width: theme.spacing(5),
-    height: theme.spacing(5)
+    width: theme.spacing(6.5),
+    height: theme.spacing(6.5),
+    marginRight: 15,
   },
   sideMenuTweetButton: {
     padding: theme.spacing(3.2),
