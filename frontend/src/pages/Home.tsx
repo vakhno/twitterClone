@@ -1,4 +1,4 @@
-import { TextField, IconButton, ListItem, Divider, Avatar, ListItemText, List, TextareaAutosize, CircularProgress, Grid, Typography, makeStyles, Container, InputBase, Paper, Button, } from '@material-ui/core'
+import { TextField, IconButton, ListItemAvatar, InputAdornment, ListItem, Divider, Avatar, ListItemText, List, TextareaAutosize, CircularProgress, Grid, Typography, makeStyles, Container, InputBase, Paper, Button, } from '@material-ui/core'
 import React from 'react'
 
 import classNames from 'classnames';
@@ -9,6 +9,9 @@ import { Tweet } from '../components/Tweet/Tweet'
 import { SideMenu } from '../components/SideMenu/SideMenu';
 import EmojiIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined';
 import ImageIcon from '@material-ui/icons/ImageOutlined';
+import SearchIcon from '@material-ui/icons/SearchOutlined';
+import PersonAddIcon from '@material-ui/icons/PersonAddRounded';
+
 import theme from '../theme';
 
 export const homeStyles = makeStyles((theme) => ({
@@ -159,6 +162,44 @@ export const homeStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
   },
+  rightSideBlock: {
+    backgroundColor: '#F5F8FA',
+    borderRadius: 15,
+    marginTop: 20,
+    '& .MuiList-root': {
+      paddingTop: 0,
+    },
+  },
+  rightSideBlockHeader: {
+    borderTop: 0,
+    borderLeft: 0,
+    borderRight: 0,
+    backgroundColor: 'transparent',
+    padding: '13px 18px',
+    '& b': {
+      fontSize: 20,
+      fontWeight: 800,
+    },
+  },
+  rightSideBlockItem: {
+    cursor: 'pointer',
+    '& .MuiTypography-body1': {
+      fontWeight: 700,
+    },
+    '& .MuiListItemAvatar-root': {
+      minWidth: 50,
+    },
+    '& .MuiListItemText-root': {
+      margin: 0,
+    },
+    '&:hover': {
+      backgroundColor: '#edf3f6',
+    },
+    '& a': {
+      color: 'inherit',
+      textDecoration: 'none',
+    },
+  },
 }))
 
 const SearchTextField = withStyles((theme) => ({
@@ -274,8 +315,84 @@ export const Home: React.FC = (): React.ReactElement => {
           <Grid item sm={3} md={3}>
             <div className={classes.rightSide}>
               <SearchTextField
+              variant='outlined'
               placeholder='Поиск по Твиттеру'
-              fullWidth/>
+              fullWidth
+              inputProps={{
+                startAdornment: (
+                  <InputAdornment position='start'>
+                    <SearchIcon/>
+                  </InputAdornment>
+                )
+              }}
+               />
+              <Paper className={classes.rightSideBlock}>
+                <Paper className={classes.rightSideBlockHeader}>
+                  <b>Актуальные темы</b>
+                </Paper>
+                <List>
+                  <ListItem className={classes.rightSideBlockItem}>
+                    <ListItemText
+                      primary='Одесса'
+                      secondary={
+                        <Typography component='span' variant='body2'>
+                          Твитов: 3 332
+                        </Typography>
+                      }
+                    />
+                  </ListItem>
+                  <Divider component='li'/>
+                  <ListItem className={classes.rightSideBlockItem}>
+                    <ListItemText
+                      primary='Киев'
+                      secondary={
+                        <Typography component='span' variant='body2'>
+                          Твитов: 9 562
+                        </Typography>
+                      }
+                    />
+                  </ListItem>
+                  <Divider component='li'/>
+                  <ListItem className={classes.rightSideBlockItem}>
+                    <ListItemText
+                      primary='Львов'
+                      secondary={
+                        <Typography component='span' variant='body2'>
+                          Твитов: 5 288
+                        </Typography>
+                      }
+                    />
+                  </ListItem>
+                  <Divider component='li'/>
+                </List>
+              </Paper>
+              <Paper className={classes.rightSideBlock}>
+                <Paper className={classes.rightSideBlockHeader} variant='outlined'>
+                  <b>Кого читать</b>
+                </Paper>
+                <List>
+                  <ListItem className={classes.rightSideBlockItem}>
+                    <ListItemAvatar>
+                      <Avatar
+                        alt="Andrey Veliki"
+                        src='https://media.istockphoto.com/photos/young-man-with-backpack-taking-selfie-portrait-on-a-mountain-smiling-picture-id1329031407?b=1&k=20&m=1329031407&s=170667a&w=0&h=J6qRqj9hbKtSVwIfMJhcRXf3AEyAOshph2IAbPHwNUo='
+                      />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary='Veliki Hear'
+                      secondary={
+                        <Typography component='span' variant='body2'>
+                          @veilikiHear
+                        </Typography>
+                      }
+                    />
+                    <Button>
+                      <PersonAddIcon/>
+                    </Button>
+                  </ListItem>
+                  <Divider component='li'/>
+                </List>
+              </Paper>
             </div>
           </Grid>
         </Grid>
