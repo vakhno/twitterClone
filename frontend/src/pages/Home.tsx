@@ -1,16 +1,13 @@
-import { TextField, IconButton, ListItemAvatar, InputAdornment, ListItem, Divider, Avatar, ListItemText, List, TextareaAutosize, CircularProgress, Grid, Typography, makeStyles, Container, InputBase, Paper, Button, } from '@material-ui/core'
+import { TextField, ListItemAvatar, InputAdornment, ListItem, Divider, Avatar, ListItemText, List, TextareaAutosize, CircularProgress, Grid, Typography, makeStyles, Container, Paper, Button, } from '@material-ui/core'
 import React from 'react'
-
-import classNames from 'classnames';
 
 import { createStyles, withStyles } from '@material-ui/styles';
 import { grey } from '@material-ui/core/colors';
 import { Tweet } from '../components/Tweet/Tweet'
 import { SideMenu } from '../components/SideMenu/SideMenu';
-import EmojiIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined';
-import ImageIcon from '@material-ui/icons/ImageOutlined';
 import SearchIcon from '@material-ui/icons/SearchOutlined';
 import PersonAddIcon from '@material-ui/icons/PersonAddRounded';
+import { AddTweetForm } from '../components/AddTweetForm/AddTweetForm';
 
 import theme from '../theme';
 
@@ -250,49 +247,7 @@ export const Home: React.FC = (): React.ReactElement => {
                 <Typography variant='h6'>Главная</Typography>
               </Paper>
               <Paper>
-                <div className={classes.addForm}>
-                  <div className={classes.addFormBody}>
-                    <Avatar
-                      className={classes.tweetAvatar}
-                      alt={'User Avatar'}
-                      src='https://media.istockphoto.com/photos/young-man-is-playing-with-a-dog-and-do-selfie-picture-id1300658241?b=1&k=20&m=1300658241&s=170667a&w=0&h=0lrTViinfnDjbWDgxV0TDDSAXvzSgmrN-pKq0q60hqA='
-                    />
-                    <TextareaAutosize
-                      className={classes.addFormTextarea}
-                      placeholder={'Tweet textarea'}
-                    />
-                  </div>
-                  <div className={classes.addFormBottom}>
-                    <div className={classNames(classes.tweetFooterIcons, classes.addFormBottomActions)}>
-                      <IconButton color='primary'>
-                        <ImageIcon style={{fontSize: 20}}/>
-                      </IconButton>
-                      <IconButton color='primary'>
-                        <EmojiIcon style={{fontSize: 20}}/>
-                      </IconButton>
-                    </div>
-                    <div className={classes.addFormBottomRight}>
-                      <span>280</span>
-                      <div className={classes.addFormCircleProgress}>
-                        <CircularProgress 
-                          variant='static' 
-                          size={20}
-                          thickness={5}
-                          value={18}/>
-                        <CircularProgress 
-                          style={{color:'rgba(0, 0, 0, 0.1)'}}
-                          variant='static'
-                          size={20}
-                          thickness={4}
-                          value={100}
-                        />
-                      </div>
-                      <Button color='primary' variant='contained'>
-                        Твитнуть
-                      </Button>
-                    </div>
-                  </div>
-                </div>
+                <AddTweetForm classes={classes}/>
                 <div className={classes.addFormBottomLine}/>
               </Paper>
               {
