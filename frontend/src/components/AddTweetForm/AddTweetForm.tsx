@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton'
 import TextareaAutosize from '@material-ui/core/TextareaAutosize'
 import EmojiIcon from '@material-ui/icons/SentimentSatisfiedAltOutlined';
 import ImageIcon from '@material-ui/icons/ImageOutlined';
-import {homeStyles} from '../../pages/Home'
+import {homeStyles} from '../../pages/Home/theme'
 import {useState} from 'react'
 import classNames from 'classnames'
 

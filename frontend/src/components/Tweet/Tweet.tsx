@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconButton, Typography, Paper, Avatar } from '@material-ui/core'
 
-import { homeStyles } from '../../pages/Home'
+import { homeStyles } from '../../pages/Home/theme'
 
 import CommentIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
 import RepeatIcon from '@material-ui/icons/RepeatOutlined';

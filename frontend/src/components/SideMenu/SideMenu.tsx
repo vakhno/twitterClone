@@ -1,6 +1,6 @@
 import { IconButton, Typography, Button, Hidden } from '@material-ui/core'
 import React, { ReactElement } from 'react'
-import {homeStyles} from '../../pages/Home'
+import {homeStyles} from '../../pages/Home/theme'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import SearchIcon from '@material-ui/icons/Search';
 import NotificationIcon from '@material-ui/icons/NotificationsNoneOutlined';
