@@ -1,46 +1,12 @@
-import { TextField, ListItemAvatar, InputAdornment, ListItem, Divider, Avatar, ListItemText, List, TextareaAutosize, CircularProgress, Grid, Typography, makeStyles, Container, Paper, Button, } from '@material-ui/core'
+import { ListItemAvatar, ListItem, Divider, Avatar, ListItemText, List, TextareaAutosize, CircularProgress, Grid, Typography, makeStyles, Container, Paper, Button, } from '@material-ui/core'
 import React from 'react'
 
-import { withStyles } from '@material-ui/styles';
 import { Tweet } from '../../components/Tweet/Tweet'
 import { SideMenu } from '../../components/SideMenu/SideMenu';
-import SearchIcon from '@material-ui/icons/SearchOutlined';
+import { SearchTextField } from '../../components/SearchTextField/SearchTextField'
 import PersonAddIcon from '@material-ui/icons/PersonAddRounded';
 import { AddTweetForm } from '../../components/AddTweetForm/AddTweetForm';
 import { homeStyles } from './theme';
-
-const SearchTextField = withStyles((theme) => ({
-  root: {
-    '& .MuiOutlinedInput-root': {
-      borderRadius: 30,
-      backgroundColor: '#E6ECF0',
-      padding: 0,
-      paddingLeft: 15,
-      '& .Mui-focused': {
-        backgroundColor: '#fff',
-        '& fieldset': { 
-          borderWidth: 1, borderColor: theme.palette.primary.main 
-        },
-        '& svg path': {
-          fill: theme.palette.primary.main,
-        },
-      },
-      '&:hover': {
-        '& fieldset': { 
-          borderColor: 'transparent' 
-        },
-      },
-      '& fieldset': {
-        borderColor: 'transparent',
-        borderWidth: 1,
-      },
-    },
-    '& .MuiOutlinedInput-input': {
-      padding: '12px 14px 14px 5px',
-    },
-  },
-}))(TextField);
-
 
 export const Home: React.FC = (): React.ReactElement => {
   const classes = homeStyles();
@@ -79,18 +45,7 @@ export const Home: React.FC = (): React.ReactElement => {
           </Grid>
           <Grid item sm={3} md={3}>
             <div className={classes.rightSide}>
-              <SearchTextField
-              variant='outlined'
-              placeholder='Поиск по Твиттеру'
-              fullWidth
-              inputProps={{
-                startAdornment: (
-                  <InputAdornment position='start'>
-                    <SearchIcon/>
-                  </InputAdornment>
-                )
-              }}
-               />
+              <SearchTextField/>
               <Paper className={classes.rightSideBlock}>
                 <Paper className={classes.rightSideBlockHeader}>
                   <b>Актуальные темы</b>
